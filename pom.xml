@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>com.buschmais.jqassistant.plugin</groupId>
-    <artifactId>jqa-cdi-plugin</artifactId>
+    <artifactId>cdi</artifactId>
 
     <build>
         <plugins>
