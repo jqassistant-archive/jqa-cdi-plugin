@@ -1,0 +1,16 @@
+= jQAssistant CDI Plugin
+
+This is the Java Plugin of https://www.jqassistant.org[jQAssistant^].
+It enables jQAssistant to scan and to analyze CDI related
+artifacts like:
+
+- producer
+- injection points
+- interceptors
+- decorators
+- scopes
+- event producer
+- event consumer
+- ...
+
+For more information on jQAssistant see https://www.jqassistant.org[^].
