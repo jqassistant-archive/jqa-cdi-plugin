@@ -10,6 +10,8 @@
 
     <groupId>com.buschmais.jqassistant.plugin</groupId>
     <artifactId>cdi</artifactId>
+    <version>1.2-SNAPSHOT</version>
+
     <name>jQAssistant CDI Plugin</name>
 
     <organization>
