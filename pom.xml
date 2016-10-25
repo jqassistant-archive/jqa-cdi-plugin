@@ -10,7 +10,7 @@
 
     <groupId>com.buschmais.jqassistant.plugin</groupId>
     <artifactId>cdi</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2-RC1</version>
 
     <name>jQAssistant CDI Plugin</name>
     <url>http://jqassistant.org/</url>
@@ -36,7 +36,8 @@
         <connection>scm:git:git@github.com:buschmais/jqa-cdi-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:buschmais/jqa-cdi-plugin.git</developerConnection>
         <url>https://github.com/buschmais/jqa-cdi-plugin</url>
-    </scm>
+      <tag>1.2-RC1</tag>
+  </scm>
 
 
     <properties>
