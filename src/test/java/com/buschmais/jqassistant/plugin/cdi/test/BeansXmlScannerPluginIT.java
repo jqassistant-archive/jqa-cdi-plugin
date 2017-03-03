@@ -1,31 +1,21 @@
 package com.buschmais.jqassistant.plugin.cdi.test;
 
-import com.buschmais.jqassistant.core.analysis.api.AnalysisException;
-import com.buschmais.jqassistant.core.analysis.api.Result;
-import com.buschmais.jqassistant.plugin.cdi.api.model.BeansXmlDescriptor;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeStereotype;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.decorator.DecoratorBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.DefaultBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.NewBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.interceptor.CustomInterceptor;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.qualifier.CustomQualifier;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.qualifier.NamedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.*;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.specializes.SpecializesBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.stereotype.CustomStereotype;
-import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
-import org.junit.Test;
+import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.assertThat;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static com.buschmais.jqassistant.plugin.java.test.matcher.FieldDescriptorMatcher.fieldDescriptor;
-import static com.buschmais.jqassistant.plugin.java.test.matcher.MethodDescriptorMatcher.methodDescriptor;
-import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
+import org.junit.Test;
+
+import com.buschmais.jqassistant.plugin.cdi.api.model.BeansXmlDescriptor;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeStereotype;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.decorator.DecoratorBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.interceptor.CustomInterceptor;
+import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
 /**
  * Tests for the CDI concepts.
@@ -37,11 +27,9 @@ public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
      *
      * @throws IOException
      *             If the test fails.
-     * @throws AnalysisException
-     *             If the test fails.
      */
     @Test
-    public void beansDescriptor() throws IOException, AnalysisException, NoSuchMethodException, NoSuchFieldException {
+    public void beansDescriptor() throws IOException, NoSuchMethodException, NoSuchFieldException {
         scanClassPathDirectory(getClassesDirectory(BeansXmlScannerPluginIT.class));
         store.beginTransaction();
         List<Object> column = query("MATCH (beans:Cdi:Beans:Xml:File) RETURN beans").getColumn("beans");
@@ -58,7 +46,7 @@ public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
     }
 
     @Test
-    public void invalidBeansDescriptor() throws IOException, AnalysisException, NoSuchMethodException, NoSuchFieldException {
+    public void invalidBeansDescriptor() throws IOException, NoSuchMethodException, NoSuchFieldException {
         scanClassPathDirectory(new File(getClassesDirectory(BeansXmlScannerPluginIT.class), "invalid"));
         store.beginTransaction();
         List<Object> column = query("MATCH (beans:Cdi:Beans:Xml:File) RETURN beans").getColumn("beans");
