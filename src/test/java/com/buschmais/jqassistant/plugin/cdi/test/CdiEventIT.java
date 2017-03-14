@@ -15,17 +15,15 @@ import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
 /**
  * Tests for CDI event concepts.
- * 
+ *
  * @author Aparna Chaudhary
  */
 public class CdiEventIT extends AbstractJavaPluginIT {
 
 	/**
 	 * Verifies the concept "cdi:EventProducer".
-	 * 
+	 *
 	 * @throws java.io.IOException
-	 *             If the test fails.
-	 * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
 	 *             If the test fails.
 	 */
 	@Test
@@ -39,10 +37,8 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 
 	/**
 	 * Verifies the concept {@code cdi:EventProducer} is not applied to invalid EventProducer classes.
-	 * 
+	 *
 	 * @throws java.io.IOException
-	 *             If the test fails.
-	 * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
 	 *             If the test fails.
 	 */
 	@Test
@@ -56,10 +52,8 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 
 	/**
 	 * Verifies the concept "cdi:EventConsumer".
-	 * 
+	 *
 	 * @throws java.io.IOException
-	 *             If the test fails.
-	 * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
 	 *             If the test fails.
 	 */
 	@Test
@@ -73,10 +67,8 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 
 	/**
 	 * Verifies the concept {@code cdi:EventConsumer} is not applied to invalid EventConsumer classes.
-	 * 
+	 *
 	 * @throws java.io.IOException
-	 *             If the test fails.
-	 * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
 	 *             If the test fails.
 	 */
 	@Test

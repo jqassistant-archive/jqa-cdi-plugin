@@ -23,17 +23,15 @@ import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
 /**
  * Tests for CDI injection constraints.
- * 
+ *
  * @author Aparna Chaudhary
  */
 public class CdiInjectionIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the constraint "cdi:BeansMustUseConstructorInjection".
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
@@ -60,10 +58,8 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
     /**
      * Verifies the constraint "cdi:BeansMustUseConstructorInjection" results in
      * no violations when applied to valid beans.
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
@@ -86,10 +82,8 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
     /**
      * Verifies the constraint "cdi:BeansMustNotUseFieldInjection" results in no
      * violations when applied to beans with setter or constructor injection.
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
@@ -112,10 +106,8 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the constraint "cdi:BeansMustNotUseFieldInjection".
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test

@@ -1,5 +1,16 @@
 package com.buschmais.jqassistant.plugin.cdi.test;
 
+import static com.buschmais.jqassistant.plugin.java.test.matcher.FieldDescriptorMatcher.fieldDescriptor;
+import static com.buschmais.jqassistant.plugin.java.test.matcher.MethodDescriptorMatcher.methodDescriptor;
+import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
+
+import java.util.List;
+
+import org.junit.Test;
+
 import com.buschmais.jqassistant.core.analysis.api.Result;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.decorator.DecoratorBean;
@@ -11,16 +22,6 @@ import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.*;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.specializes.SpecializesBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.stereotype.CustomStereotype;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
-import org.junit.Test;
-
-import java.util.List;
-
-import static com.buschmais.jqassistant.plugin.java.test.matcher.FieldDescriptorMatcher.fieldDescriptor;
-import static com.buschmais.jqassistant.plugin.java.test.matcher.MethodDescriptorMatcher.methodDescriptor;
-import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
-import static org.junit.Assert.assertThat;
 
 /**
  * Tests for the CDI concepts.
@@ -30,8 +31,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Dependent".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void dependent() throws Exception {
@@ -48,8 +49,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:RequestScoped".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void requestScoped() throws Exception {
@@ -66,8 +67,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:SessionScoped".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void sessionScoped() throws Exception {
@@ -84,8 +85,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:ConversationScoped".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void conversationScoped() throws Exception {
@@ -102,8 +103,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:ApplicationScoped".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void applicationScoped() throws Exception {
@@ -120,8 +121,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:SingletonScoped".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void singletonScoped() throws Exception {
@@ -136,8 +137,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Stereotype".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void stereotype() throws Exception {
@@ -152,8 +153,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Alternative".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void alternative() throws Exception {
@@ -168,8 +169,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Specializes".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void specializes() throws Exception {
@@ -185,8 +186,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Qualifier".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void qualifier() throws Exception {
@@ -202,8 +203,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Produces".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void produces() throws Exception {
@@ -223,25 +224,26 @@ public class CdiIT extends AbstractJavaPluginIT {
         assertThat(column, hasItem(fieldDescriptor(SessionScopedBean.class, "producerField")));
         store.commitTransaction();
     }
-    
+
     /**
-     * Verifies the uniqueness of concept "cdi:Produces" with keeping existing properties.
-     * 
+     * Verifies the uniqueness of concept "cdi:Produces" with keeping existing
+     * properties.
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
     public void producesUnique() throws Exception {
-    	scanClasses(ApplicationScopedBean.class);
+        scanClasses(ApplicationScopedBean.class);
         store.beginTransaction();
         // create existing relations with and without properties
-        assertThat(query("MATCH (m:Method {name: 'producerMethod'}), (t {fqn:'java.lang.String'}) MERGE (m)-[r:PRODUCES {prop: 'value'}]->(t) RETURN r").getColumn("r").size(), equalTo(1));
-        assertThat(query("MATCH (f:Field {name: 'producerField'}), (t {fqn:'java.lang.String'}) MERGE (f)-[r:PRODUCES]->(t) RETURN r").getColumn("r").size(), equalTo(1));
+        assertThat(query("MATCH (m:Method {name: 'producerMethod'}), (t {fqn:'java.lang.String'}) MERGE (m)-[r:PRODUCES {prop: 'value'}]->(t) RETURN r")
+                .getColumn("r").size(), equalTo(1));
+        assertThat(query("MATCH (f:Field {name: 'producerField'}), (t {fqn:'java.lang.String'}) MERGE (f)-[r:PRODUCES]->(t) RETURN r").getColumn("r").size(),
+                equalTo(1));
         verifyUniqueRelation("PRODUCES", 2);
         store.commitTransaction();
-    	assertThat(applyConcept("cdi:Produces").getStatus(), equalTo(Result.Status.SUCCESS));
+        assertThat(applyConcept("cdi:Produces").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
         verifyUniqueRelation("PRODUCES", 2);
         store.commitTransaction();
@@ -250,8 +252,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Disposes".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void disposes() throws Exception {
@@ -264,22 +266,22 @@ public class CdiIT extends AbstractJavaPluginIT {
     }
 
     /**
-     * Verifies the uniqueness of concept "cdi:Disposes" with keeping existing properties.
-     * 
+     * Verifies the uniqueness of concept "cdi:Disposes" with keeping existing
+     * properties.
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
     public void disposesUnique() throws Exception {
-    	scanClasses(DisposesBean.class);
+        scanClasses(DisposesBean.class);
         store.beginTransaction();
         // create existing relation with property
-        assertThat(query("MATCH (p:Parameter), (t {fqn:'java.lang.String'}) MERGE (p)-[r:DISPOSES {prop: 'value'}]->(t) RETURN r").getColumn("r").size(), equalTo(1));
+        assertThat(query("MATCH (p:Parameter), (t {fqn:'java.lang.String'}) MERGE (p)-[r:DISPOSES {prop: 'value'}]->(t) RETURN r").getColumn("r").size(),
+                equalTo(1));
         verifyUniqueRelation("DISPOSES", 1);
         store.commitTransaction();
-    	assertThat(applyConcept("cdi:Disposes").getStatus(), equalTo(Result.Status.SUCCESS));
+        assertThat(applyConcept("cdi:Disposes").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
         verifyUniqueRelation("DISPOSES", 1);
         store.commitTransaction();
@@ -288,8 +290,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Named".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void named() throws Exception {
@@ -305,8 +307,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Any".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void any() throws Exception {
@@ -321,8 +323,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:New".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void newQualifier() throws Exception {
@@ -337,8 +339,8 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Default".
      *
-     * @throws java.io.IOException                                           If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException If the test fails.
+     * @throws java.io.IOException
+     *             If the test fails.
      */
     @Test
     public void defaultQualifier() throws Exception {
@@ -349,14 +351,18 @@ public class CdiIT extends AbstractJavaPluginIT {
         assertThat(column, hasItem(fieldDescriptor(DefaultBean.class, "bean")));
         store.commitTransaction();
     }
-    
+
     /**
-     * Verifies a unique relation with property. An existing transaction is assumed.
-     * @param relationName The name of the relation.
-     * @param total The total of relations with the given name.
+     * Verifies a unique relation with property. An existing transaction is
+     * assumed.
+     *
+     * @param relationName
+     *            The name of the relation.
+     * @param total
+     *            The total of relations with the given name.
      */
     private void verifyUniqueRelation(String relationName, int total) {
-    	assertThat(query("MATCH ()-[r:" + relationName + " {prop: 'value'}]->() RETURN r").getColumn("r").size(), equalTo(1));
-    	assertThat(query("MATCH ()-[r:" + relationName + "]->() RETURN r").getColumn("r").size(), equalTo(total));
+        assertThat(query("MATCH ()-[r:" + relationName + " {prop: 'value'}]->() RETURN r").getColumn("r").size(), equalTo(1));
+        assertThat(query("MATCH ()-[r:" + relationName + "]->() RETURN r").getColumn("r").size(), equalTo(total));
     }
 }

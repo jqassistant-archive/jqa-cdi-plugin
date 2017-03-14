@@ -21,10 +21,8 @@ public class InterceptorIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the concept "cdi:Interceptor".
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
@@ -39,10 +37,8 @@ public class InterceptorIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the concept "interceptor:Binding".
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test

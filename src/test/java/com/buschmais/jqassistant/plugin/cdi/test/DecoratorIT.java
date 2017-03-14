@@ -19,10 +19,8 @@ public class DecoratorIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the concept "cdi:Decorator".
-     * 
+     *
      * @throws java.io.IOException
-     *             If the test fails.
-     * @throws com.buschmais.jqassistant.core.analysis.api.AnalysisException
      *             If the test fails.
      */
     @Test
