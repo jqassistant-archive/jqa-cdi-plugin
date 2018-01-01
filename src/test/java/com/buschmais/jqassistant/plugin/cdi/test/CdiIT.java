@@ -1,15 +1,7 @@
 package com.buschmais.jqassistant.plugin.cdi.test;
 
-import static com.buschmais.jqassistant.plugin.java.test.matcher.FieldDescriptorMatcher.fieldDescriptor;
-import static com.buschmais.jqassistant.plugin.java.test.matcher.MethodDescriptorMatcher.methodDescriptor;
-import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
-import static org.junit.Assert.assertThat;
-
+import java.io.IOException;
 import java.util.List;
-
-import org.junit.Test;
 
 import com.buschmais.jqassistant.core.analysis.api.Result;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeBean;
@@ -18,10 +10,26 @@ import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.DefaultBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.NewBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.qualifier.CustomQualifier;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.qualifier.NamedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.*;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.ApplicationScopedBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.ConversationScopedBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.DependentBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.DisposesBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.RequestScopedBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.SessionScopedBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.SingletonScopedBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.specializes.SpecializesBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.stereotype.CustomStereotype;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
+
+import org.junit.Test;
+
+import static com.buschmais.jqassistant.plugin.java.test.matcher.FieldDescriptorMatcher.fieldDescriptor;
+import static com.buschmais.jqassistant.plugin.java.test.matcher.MethodDescriptorMatcher.methodDescriptor;
+import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
+
 
 /**
  * Tests for the CDI concepts.
@@ -31,7 +39,7 @@ public class CdiIT extends AbstractJavaPluginIT {
     /**
      * Verifies the concept "cdi:Dependent".
      *
-     * @throws java.io.IOException
+     * @throws IOException
      *             If the test fails.
      */
     @Test

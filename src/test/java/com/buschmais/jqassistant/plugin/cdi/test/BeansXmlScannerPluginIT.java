@@ -1,14 +1,8 @@
 package com.buschmais.jqassistant.plugin.cdi.test;
 
-import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
-import org.junit.Test;
 
 import com.buschmais.jqassistant.plugin.cdi.api.model.BeansXmlDescriptor;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.AlternativeBean;
@@ -16,6 +10,14 @@ import com.buschmais.jqassistant.plugin.cdi.test.set.beans.alternative.Alternati
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.decorator.DecoratorBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.interceptor.CustomInterceptor;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
+
+import org.junit.Test;
+
+import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
 
 /**
  * Tests for the CDI concepts.

@@ -1,17 +1,17 @@
 package com.buschmais.jqassistant.plugin.cdi.test;
 
+import com.buschmais.jqassistant.core.analysis.api.Result;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.event.CustomEventConsumer;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.event.CustomEventProducer;
+import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
+
+import org.junit.Test;
+
 import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
-
-import com.buschmais.jqassistant.core.analysis.api.Result;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.event.CustomEventConsumer;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.event.CustomEventProducer;
-import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
 /**
  * Tests for CDI event concepts.
