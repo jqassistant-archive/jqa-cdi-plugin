@@ -42,7 +42,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
 
         store.beginTransaction();
 
-        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportWriter.getConstraintResults().values());
+        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportPlugin.getConstraintResults().values());
         assertThat("Unexpected number of violated constraints", constraintViolations.size(), equalTo(1));
 
         Result<Constraint> result = constraintViolations.get(0);
@@ -69,7 +69,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
         assertThat(validateConstraint(ruleName).getStatus(), equalTo(SUCCESS));
         store.beginTransaction();
 
-        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportWriter.getConstraintResults().values());
+        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportPlugin.getConstraintResults().values());
         assertThat("Unexpected number of violated constraints", constraintViolations.size(), equalTo(1));
         Result<Constraint> result = constraintViolations.get(0);
         assertThat("Expected constraint " + ruleName, result, result(constraint(ruleName)));
@@ -94,7 +94,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
         assertThat(validateConstraint(ruleName).getStatus(), equalTo(SUCCESS));
         store.beginTransaction();
 
-        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportWriter.getConstraintResults().values());
+        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportPlugin.getConstraintResults().values());
         assertThat("Unexpected number of violated constraints", constraintViolations.size(), equalTo(1));
         Result<Constraint> result = constraintViolations.get(0);
         assertThat("Expected constraint " + ruleName, result, result(constraint(ruleName)));
@@ -117,7 +117,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
         assertThat(validateConstraint(ruleName).getStatus(), equalTo(FAILURE));
         store.beginTransaction();
 
-        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportWriter.getConstraintResults().values());
+        List<Result<Constraint>> constraintViolations = new ArrayList<>(reportPlugin.getConstraintResults().values());
         assertThat("Unexpected number of violated constraints", constraintViolations.size(), equalTo(1));
         Result<Constraint> result = constraintViolations.get(0);
         assertThat("Expected constraint " + ruleName, result, result(constraint(ruleName)));
