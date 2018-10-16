@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.buschmais.jqassistant</groupId>
         <artifactId>jqassistant.plugin.plugin-parent</artifactId>
-        <version>1.5.0-RC-2-SNAPSHOT</version>
+        <version>1.5.0</version>
     </parent>
 
     <groupId>com.buschmais.jqassistant.plugin</groupId>
     <artifactId>cdi</artifactId>
-    <version>1.5-RC-2-SNAPSHOT</version>
+    <version>1.5.0</version>
 
     <name>jQAssistant CDI Plugin</name>
     <url>http://jqassistant.org/</url>
@@ -40,9 +40,9 @@
 
 
     <properties>
-        <jqa-plugin-common.version>1.5-RC-2-SNAPSHOT</jqa-plugin-common.version>
-        <jqa-java-plugin.version>1.5-RC-2-SNAPSHOT</jqa-java-plugin.version>
-        <jqa-xml-plugin.version>1.5-RC-2-SNAPSHOT</jqa-xml-plugin.version>
+        <jqa-plugin-common.version>1.5.0</jqa-plugin-common.version>
+        <jqa-java-plugin.version>1.5.0</jqa-java-plugin.version>
+        <jqa-xml-plugin.version>1.5.0</jqa-xml-plugin.version>
     </properties>
 
     <build>
