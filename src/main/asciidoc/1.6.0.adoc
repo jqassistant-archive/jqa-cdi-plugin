@@ -1,5 +1,5 @@
 ifndef::jqa-in-manual[== Version 1.6.0]
 ifdef::jqa-in-manual[== CDI Plugin 1.6.0]
 
-No Changes.
+No changes for this version.
 
