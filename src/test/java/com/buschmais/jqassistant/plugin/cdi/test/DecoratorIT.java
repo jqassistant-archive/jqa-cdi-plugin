@@ -4,7 +4,7 @@ import com.buschmais.jqassistant.core.analysis.api.Result;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.decorator.DecoratorBean;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.buschmais.jqassistant.plugin.java.test.matcher.FieldDescriptorMatcher.fieldDescriptor;
 import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;

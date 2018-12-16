@@ -11,7 +11,7 @@ import com.buschmais.jqassistant.plugin.cdi.test.set.beans.decorator.DecoratorBe
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.interceptor.CustomInterceptor;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
 import static org.hamcrest.CoreMatchers.allOf;

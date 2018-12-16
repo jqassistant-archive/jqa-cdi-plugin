@@ -11,7 +11,7 @@ import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.BeanWithFieldI
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.BeanWithSetterInjection;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.buschmais.jqassistant.core.analysis.api.Result.Status.FAILURE;
 import static com.buschmais.jqassistant.core.analysis.api.Result.Status.SUCCESS;
