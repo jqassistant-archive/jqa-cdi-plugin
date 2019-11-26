@@ -1,6 +1,6 @@
 package com.buschmais.jqassistant.plugin.cdi.test;
 
-import com.buschmais.jqassistant.core.analysis.api.Result;
+import com.buschmais.jqassistant.core.report.api.model.Result;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.event.CustomEventConsumer;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.event.CustomEventProducer;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;

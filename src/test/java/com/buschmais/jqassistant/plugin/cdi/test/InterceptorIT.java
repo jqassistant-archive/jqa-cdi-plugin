@@ -2,7 +2,7 @@ package com.buschmais.jqassistant.plugin.cdi.test;
 
 import java.util.List;
 
-import com.buschmais.jqassistant.core.analysis.api.Result;
+import com.buschmais.jqassistant.core.report.api.model.Result;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.interceptor.CustomBinding;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.interceptor.CustomInterceptor;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
