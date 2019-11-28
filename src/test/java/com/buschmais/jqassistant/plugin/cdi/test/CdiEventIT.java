@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.core.IsNull.nullValue;
+import static org.hamcrest.Matchers.empty;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -46,7 +46,7 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 		scanClasses(CdiEventIT.class);
         assertThat(applyConcept("cdi:EventProducer").getStatus(), equalTo(Result.Status.FAILURE));
 		store.beginTransaction();
-		assertThat("Unexpected EventProducer", query("MATCH (e:Type:Cdi:EventProducer) RETURN e").getColumn("e"), nullValue());
+		assertThat("Unexpected EventProducer", query("MATCH (e:Type:Cdi:EventProducer) RETURN e").getRows(), empty());
 		store.commitTransaction();
 	}
 
@@ -76,7 +76,7 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 		scanClasses(CdiEventIT.class);
         assertThat(applyConcept("cdi:EventConsumer").getStatus(), equalTo(Result.Status.FAILURE));
 		store.beginTransaction();
-		assertThat("Unexpected EventConsumer", query("MATCH (e:Type:Cdi:EventConsumer) RETURN e").getColumn("e"), nullValue());
+		assertThat("Unexpected EventConsumer", query("MATCH (e:Type:Cdi:EventConsumer) RETURN e").getRows(), empty());
 		store.commitTransaction();
 	}
 }
