@@ -14,9 +14,9 @@ import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 import org.junit.jupiter.api.Test;
 
 import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
-import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.Matchers.hasItems;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -31,7 +31,7 @@ public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void beansDescriptor() throws IOException, NoSuchMethodException, NoSuchFieldException {
+    public void beansDescriptor() {
         scanClassPathDirectory(getClassesDirectory(BeansXmlScannerPluginIT.class));
         store.beginTransaction();
         List<Object> column = query("MATCH (beans:Cdi:Beans:Xml:File) RETURN beans").getColumn("beans");
@@ -40,15 +40,14 @@ public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
         assertThat(beansXmlDescriptor.getFileName(), equalTo("/META-INF/beans.xml"));
         assertThat(beansXmlDescriptor.getVersion(), equalTo("1.1"));
         assertThat(beansXmlDescriptor.getBeanDiscoveryMode(), equalTo("annotated"));
-        assertThat(beansXmlDescriptor.getAlternatives(),
-                allOf(hasItem(typeDescriptor(AlternativeBean.class)), hasItem(typeDescriptor(AlternativeStereotype.class))));
+        assertThat(beansXmlDescriptor.getAlternatives(), hasItems(typeDescriptor(AlternativeBean.class), typeDescriptor(AlternativeStereotype.class)));
         assertThat(beansXmlDescriptor.getDecorators(), hasItem(typeDescriptor(DecoratorBean.class)));
         assertThat(beansXmlDescriptor.getInterceptors(), hasItem(typeDescriptor(CustomInterceptor.class)));
         store.commitTransaction();
     }
 
     @Test
-    public void invalidBeansDescriptor() throws IOException, NoSuchMethodException, NoSuchFieldException {
+    public void invalidBeansDescriptor() {
         scanClassPathDirectory(new File(getClassesDirectory(BeansXmlScannerPluginIT.class), "invalid"));
         store.beginTransaction();
         List<Object> column = query("MATCH (beans:Cdi:Beans:Xml:File) RETURN beans").getColumn("beans");
