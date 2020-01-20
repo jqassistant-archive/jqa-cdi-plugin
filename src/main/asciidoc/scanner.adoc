@@ -3,7 +3,7 @@
 
 Imports bean descriptors from `META-INF/beans.xml` or `WEB-INF/beans.xml` files.
 
-=== Nodes labled with `:File:Cdi:Beans`
+=== Nodes labeled with `:File:Cdi:Beans`
 
 Represents a `beans.xml` file.
 
