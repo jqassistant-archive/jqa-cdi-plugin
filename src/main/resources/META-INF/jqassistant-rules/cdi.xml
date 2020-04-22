@@ -28,7 +28,7 @@
             WHERE
               (member:Field or member:Method)
               and producesType.fqn="javax.enterprise.inject.Produces"
-            CREATE UNIQUE
+            MERGE
               (member)-[:PRODUCES]->(type)
             RETURN
               member AS Producer
@@ -45,7 +45,7 @@
               (parameter)-[:OF_TYPE]->(type)
             WHERE
               disposesType.fqn="javax.enterprise.inject.Disposes"
-            CREATE UNIQUE
+            MERGE
               (parameter)-[:DISPOSES]->(type)
             RETURN
               disposeMethod AS DisposeMethod
@@ -353,7 +353,7 @@
             RETURN
               DISTINCT a.fqn AS invalidBean
         ]]></cypher>
-    </constraint>    
+    </constraint>
 
     <constraint id="cdi:BeansMustNotUseFieldInjection">
         <requiresConcept refId="cdi:InjectionPoint" />
@@ -365,5 +365,5 @@
               DISTINCT a.fqn AS invalidBean
         ]]></cypher>
     </constraint>
-      
+
 </jqa:jqassistant-rules>
