@@ -10,13 +10,7 @@ import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.DefaultBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.inject.NewBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.qualifier.CustomQualifier;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.qualifier.NamedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.ApplicationScopedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.ConversationScopedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.DependentBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.DisposesBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.RequestScopedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.SessionScopedBean;
-import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.SingletonScopedBean;
+import com.buschmais.jqassistant.plugin.cdi.test.set.beans.scope.*;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.specializes.SpecializesBean;
 import com.buschmais.jqassistant.plugin.cdi.test.set.beans.stereotype.CustomStereotype;
 import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
@@ -28,7 +22,7 @@ import static com.buschmais.jqassistant.plugin.java.test.matcher.MethodDescripto
 import static com.buschmais.jqassistant.plugin.java.test.matcher.TypeDescriptorMatcher.typeDescriptor;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 
 /**
