@@ -22,7 +22,7 @@ import static org.hamcrest.Matchers.hasItems;
 /**
  * Tests for the CDI concepts.
  */
-public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
+class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies scanning of the beans descriptor.
@@ -31,7 +31,7 @@ public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void beansDescriptor() {
+    void beansDescriptor() {
         scanClassPathDirectory(getClassesDirectory(BeansXmlScannerPluginIT.class));
         store.beginTransaction();
         List<Object> column = query("MATCH (beans:Cdi:Beans:Xml:File) RETURN beans").getColumn("beans");
@@ -47,7 +47,7 @@ public class BeansXmlScannerPluginIT extends AbstractJavaPluginIT {
     }
 
     @Test
-    public void invalidBeansDescriptor() {
+    void invalidBeansDescriptor() {
         scanClassPathDirectory(new File(getClassesDirectory(BeansXmlScannerPluginIT.class), "invalid"));
         store.beginTransaction();
         List<Object> column = query("MATCH (beans:Cdi:Beans:Xml:File) RETURN beans").getColumn("beans");

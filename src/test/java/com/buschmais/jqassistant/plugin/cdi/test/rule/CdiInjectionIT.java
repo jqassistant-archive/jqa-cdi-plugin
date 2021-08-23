@@ -26,7 +26,7 @@ import static org.hamcrest.Matchers.hasSize;
  *
  * @author Aparna Chaudhary
  */
-public class CdiInjectionIT extends AbstractJavaPluginIT {
+class CdiInjectionIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the constraint "cdi:BeansMustUseConstructorInjection".
@@ -35,7 +35,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void constructorInjection() throws Exception {
+    void constructorInjection() throws Exception {
         scanClasses(BeanWithFieldInjection.class);
         String ruleName = "cdi:BeansMustUseConstructorInjection";
         assertThat(validateConstraint(ruleName).getStatus(), equalTo(FAILURE));
@@ -63,7 +63,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void constructorInjection_No_Violation() throws Exception {
+    void constructorInjection_No_Violation() throws Exception {
         scanClasses(BeanWithConstructorInjection.class);
         String ruleName = "cdi:BeansMustUseConstructorInjection";
         assertThat(validateConstraint(ruleName).getStatus(), equalTo(SUCCESS));
@@ -87,7 +87,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void fieldInjection_No_Violation() throws Exception {
+    void fieldInjection_No_Violation() throws Exception {
         scanClasses(BeanWithConstructorInjection.class);
         scanClasses(BeanWithSetterInjection.class);
         String ruleName = "cdi:BeansMustNotUseFieldInjection";
@@ -111,7 +111,7 @@ public class CdiInjectionIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void beanInjection() throws Exception {
+    void beanInjection() throws Exception {
         scanClasses(BeanWithFieldInjection.class);
         String ruleName = "cdi:BeansMustNotUseFieldInjection";
         assertThat(validateConstraint(ruleName).getStatus(), equalTo(FAILURE));

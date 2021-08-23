@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.empty;
  *
  * @author Aparna Chaudhary
  */
-public class CdiEventIT extends AbstractJavaPluginIT {
+class CdiEventIT extends AbstractJavaPluginIT {
 
 	/**
 	 * Verifies the concept "cdi:EventProducer".
@@ -27,7 +27,7 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 	 *             If the test fails.
 	 */
 	@Test
-	public void eventProducerConcept() throws Exception {
+	void eventProducerConcept() throws Exception {
 		scanClasses(CustomEventProducer.class);
         assertThat(applyConcept("cdi:EventProducer").getStatus(), equalTo(Result.Status.SUCCESS));
 		store.beginTransaction();
@@ -42,7 +42,7 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 	 *             If the test fails.
 	 */
 	@Test
-	public void testInvalid_EventProducer_Concept() throws Exception {
+	void testInvalid_EventProducer_Concept() throws Exception {
 		scanClasses(CdiEventIT.class);
         assertThat(applyConcept("cdi:EventProducer").getStatus(), equalTo(Result.Status.FAILURE));
 		store.beginTransaction();
@@ -57,7 +57,7 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 	 *             If the test fails.
 	 */
 	@Test
-	public void eventConsumerConcept() throws Exception {
+	void eventConsumerConcept() throws Exception {
 		scanClasses(CustomEventConsumer.class);
 		assertThat(applyConcept("cdi:EventConsumer").getStatus(), equalTo(Result.Status.SUCCESS));
 		store.beginTransaction();
@@ -72,7 +72,7 @@ public class CdiEventIT extends AbstractJavaPluginIT {
 	 *             If the test fails.
 	 */
 	@Test
-	public void testInvalid_EventConsumer_Concept() throws Exception {
+	void testInvalid_EventConsumer_Concept() throws Exception {
 		scanClasses(CdiEventIT.class);
         assertThat(applyConcept("cdi:EventConsumer").getStatus(), equalTo(Result.Status.FAILURE));
 		store.beginTransaction();

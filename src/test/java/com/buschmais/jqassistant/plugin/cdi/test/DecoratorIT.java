@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Tests for the decorator concepts.
  */
-public class DecoratorIT extends AbstractJavaPluginIT {
+class DecoratorIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the concept "cdi:Decorator".
@@ -24,7 +24,7 @@ public class DecoratorIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void decorator() throws Exception {
+    void decorator() throws Exception {
         scanClasses(DecoratorBean.class);
         assertThat(applyConcept("decorator:Decorator").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();

@@ -17,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Tests for the interceptor concepts.
  */
-public class InterceptorIT extends AbstractJavaPluginIT {
+class InterceptorIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the concept "cdi:Interceptor".
@@ -26,7 +26,7 @@ public class InterceptorIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void interceptor() throws Exception {
+    void interceptor() throws Exception {
         scanClasses(CustomInterceptor.class);
         assertThat(applyConcept("interceptor:Interceptor").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -42,7 +42,7 @@ public class InterceptorIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void interceptorBinding() throws Exception {
+    void interceptorBinding() throws Exception {
         scanClasses(CustomBinding.class);
         assertThat(applyConcept("interceptor:Binding").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();

@@ -28,7 +28,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Tests for the CDI concepts.
  */
-public class CdiIT extends AbstractJavaPluginIT {
+class CdiIT extends AbstractJavaPluginIT {
 
     /**
      * Verifies the concept "cdi:Dependent".
@@ -37,7 +37,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void dependent() throws Exception {
+    void dependent() throws Exception {
         scanClasses(DependentBean.class);
         assertThat(applyConcept("cdi:Dependent").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -55,7 +55,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void requestScoped() throws Exception {
+    void requestScoped() throws Exception {
         scanClasses(RequestScopedBean.class);
         assertThat(applyConcept("cdi:RequestScoped").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -73,7 +73,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void sessionScoped() throws Exception {
+    void sessionScoped() throws Exception {
         scanClasses(SessionScopedBean.class);
         assertThat(applyConcept("cdi:SessionScoped").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -91,7 +91,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void conversationScoped() throws Exception {
+    void conversationScoped() throws Exception {
         scanClasses(ConversationScopedBean.class);
         assertThat(applyConcept("cdi:ConversationScoped").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -109,7 +109,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void applicationScoped() throws Exception {
+    void applicationScoped() throws Exception {
         scanClasses(ApplicationScopedBean.class);
         assertThat(applyConcept("cdi:ApplicationScoped").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -127,7 +127,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void singletonScoped() throws Exception {
+    void singletonScoped() throws Exception {
         scanClasses(SingletonScopedBean.class);
         assertThat(applyConcept("cdi:SingletonScoped").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -143,7 +143,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void stereotype() throws Exception {
+    void stereotype() throws Exception {
         scanClasses(CustomStereotype.class);
         assertThat(applyConcept("cdi:Stereotype").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -159,7 +159,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void alternative() throws Exception {
+    void alternative() throws Exception {
         scanClasses(AlternativeBean.class);
         assertThat(applyConcept("cdi:Alternative").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -175,7 +175,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void specializes() throws Exception {
+    void specializes() throws Exception {
         scanClasses(SpecializesBean.class);
         assertThat(applyConcept("cdi:Specializes").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -192,7 +192,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void qualifier() throws Exception {
+    void qualifier() throws Exception {
         scanClasses(CustomQualifier.class);
         assertThat(applyConcept("cdi:Qualifier").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -209,7 +209,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void produces() throws Exception {
+    void produces() throws Exception {
         scanClasses(ApplicationScopedBean.class, ConversationScopedBean.class, DependentBean.class, RequestScopedBean.class, SessionScopedBean.class);
         assertThat(applyConcept("cdi:Produces").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -235,7 +235,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void producesUnique() throws Exception {
+    void producesUnique() throws Exception {
         scanClasses(ApplicationScopedBean.class);
         store.beginTransaction();
         // create existing relations with and without properties
@@ -258,7 +258,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void disposes() throws Exception {
+    void disposes() throws Exception {
         scanClasses(DisposesBean.class);
         assertThat(applyConcept("cdi:Disposes").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -275,7 +275,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void disposesUnique() throws Exception {
+    void disposesUnique() throws Exception {
         scanClasses(DisposesBean.class);
         store.beginTransaction();
         // create existing relation with property
@@ -296,7 +296,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void named() throws Exception {
+    void named() throws Exception {
         scanClasses(NamedBean.class);
         assertThat(applyConcept("cdi:Named").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -313,7 +313,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void any() throws Exception {
+    void any() throws Exception {
         scanClasses(DecoratorBean.class);
         assertThat(applyConcept("cdi:Any").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -329,7 +329,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void newQualifier() throws Exception {
+    void newQualifier() throws Exception {
         scanClasses(NewBean.class);
         assertThat(applyConcept("cdi:New").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
@@ -345,7 +345,7 @@ public class CdiIT extends AbstractJavaPluginIT {
      *             If the test fails.
      */
     @Test
-    public void defaultQualifier() throws Exception {
+    void defaultQualifier() throws Exception {
         scanClasses(DefaultBean.class);
         assertThat(applyConcept("cdi:Default").getStatus(), equalTo(Result.Status.SUCCESS));
         store.beginTransaction();
