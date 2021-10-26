@@ -1,6 +1,6 @@
 = jQAssistant CDI Plugin
 
-This is the Java Plugin of https://www.jqassistant.org[jQAssistant^].
+This is the Java Plugin of https://jqassistant.org[jQAssistant^].
 It enables jQAssistant to scan and to analyze CDI related
 artifacts like:
 
@@ -13,4 +13,4 @@ artifacts like:
 - event consumer
 - ...
 
-For more information on jQAssistant see https://www.jqassistant.org[^].
+For more information on jQAssistant see https://jqassistant.org[^].
