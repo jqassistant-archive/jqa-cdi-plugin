@@ -44,7 +44,6 @@
         <jqa-plugin-common.version>1.12.0-SNAPSHOT</jqa-plugin-common.version>
         <jqa-java-plugin.version>1.12.0-SNAPSHOT</jqa-java-plugin.version>
         <jqa-xml-plugin.version>1.12.0-SNAPSHOT</jqa-xml-plugin.version>
-        <asciidoctor.toplevelid>cdi-plugin</asciidoctor.toplevelid>
     </properties>
 
     <build>
