@@ -13,10 +13,10 @@ import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
 import org.junit.jupiter.api.Test;
 
-import static com.buschmais.jqassistant.core.analysis.test.matcher.ConstraintMatcher.constraint;
-import static com.buschmais.jqassistant.core.analysis.test.matcher.ResultMatcher.result;
 import static com.buschmais.jqassistant.core.report.api.model.Result.Status.FAILURE;
 import static com.buschmais.jqassistant.core.report.api.model.Result.Status.SUCCESS;
+import static com.buschmais.jqassistant.core.test.matcher.ConstraintMatcher.constraint;
+import static com.buschmais.jqassistant.core.test.matcher.ResultMatcher.result;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
