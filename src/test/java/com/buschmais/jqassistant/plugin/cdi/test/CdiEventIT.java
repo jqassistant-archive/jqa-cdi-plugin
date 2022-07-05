@@ -44,7 +44,7 @@ class CdiEventIT extends AbstractJavaPluginIT {
     @Test
     void testInvalid_EventProducer_Concept() throws Exception {
         scanClasses(CdiEventIT.class);
-        assertThat(applyConcept("cdi:EventProducer").getStatus(), equalTo(Result.Status.FAILURE));
+        assertThat(applyConcept("cdi:EventProducer").getStatus(), equalTo(Result.Status.WARNING));
         store.beginTransaction();
         assertThat("Unexpected EventProducer", query("MATCH (e:Type:Cdi:EventProducer) RETURN e").getRows(), empty());
         store.commitTransaction();
@@ -74,7 +74,7 @@ class CdiEventIT extends AbstractJavaPluginIT {
     @Test
     void testInvalid_EventConsumer_Concept() throws Exception {
         scanClasses(CdiEventIT.class);
-        assertThat(applyConcept("cdi:EventConsumer").getStatus(), equalTo(Result.Status.FAILURE));
+        assertThat(applyConcept("cdi:EventConsumer").getStatus(), equalTo(Result.Status.WARNING));
         store.beginTransaction();
         assertThat("Unexpected EventConsumer", query("MATCH (e:Type:Cdi:EventConsumer) RETURN e").getRows(), empty());
         store.commitTransaction();
